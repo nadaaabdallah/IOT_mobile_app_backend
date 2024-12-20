@@ -2,7 +2,7 @@ import { connect, Schema, model } from 'mongoose';
 require('dotenv').config();  // Make sure you're loading environment variables
 
 // MongoDB connection URI (you can store this in the .env file for better security)
-const connectionString = process.env.MONGODB_URI || 'mongodb://localhost:27017/authdb';
+const connectionString = process.env.MONGODB_URI || 'mongodb://localhost:27017/mydb';
 
 // Connect to MongoDB
 const connectDB = async () => {
