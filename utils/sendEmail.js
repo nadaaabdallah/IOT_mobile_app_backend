@@ -1,4 +1,4 @@
-const nodemailer = require('nodemailer');
+/*const nodemailer = require('nodemailer');
 
 // Send email using Nodemailer
 const sendEmail = async (to, subject, text) => {
@@ -25,6 +25,23 @@ const sendEmail = async (to, subject, text) => {
     console.error('Error while sending email:', error);
     throw new Error('Failed to send email');
   }
-};
+};*/
+const nodemailer = require('nodemailer');
+const transporter = nodemailer.createTransport({
+  service: 'gmail',
+  auth: {
+    user: 'your_email@gmail.com',
+    pass: 'your_password', // App password if 2FA enabled
+  },
+});
+
+transporter.sendMail({
+  from: 'your_email@gmail.com',
+  to: 'test_email@gmail.com',
+  subject: 'Test Email',
+  text: 'This is a test email',
+}).then(() => console.log('Email sent successfully'))
+  .catch(err => console.error('Error sending email:', err));
+
 
 module.exports = sendEmail;

@@ -47,7 +47,7 @@ router.post('/forgotpassword', async (req, res) => {
       code: error.code,
     });
 
-    res.status(500).json({ message: 'Server error' });
+    res.status(500).json({ message: 'Server error!' });
   }
 });
 

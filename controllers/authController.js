@@ -2,8 +2,6 @@
 const User = require('../models/user');
 const sendEmail = require('../utils/sendEmail');
 const jwt = require('jsonwebtoken');
-const bcrypt = require('bcrypt');
-const { check, validationResult } = require('express-validator');
 // Forgot password handler - Sends reset link via email
 exports.forgotPassword = async (req, res) => {
   const { email } = req.body;
